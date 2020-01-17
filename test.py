@@ -8,13 +8,17 @@ right_low = 22
 
 l1 = l2 = r1 = r2 = False
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(left_high, GPIO.OUT)
-GPIO.setup(left_low, GPIO.OUT)
-GPIO.setup(right_high, GPIO.OUT)
-GPIO.setup(right_low, GPIO.OUT)
+def init():
+	GPIO.setmode(GPIO.BCM)
+	GPIO.setup(left_high, GPIO.OUT)
+	GPIO.setup(left_low, GPIO.OUT)
+	GPIO.setup(right_high, GPIO.OUT)
+	GPIO.setup(right_low, GPIO.OUT)
+
+init()
 
 def run():
+	init()
 	print('set')
 	GPIO.output(left_high, l1)
 	GPIO.output(left_low, l2)
